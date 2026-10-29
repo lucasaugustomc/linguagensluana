@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#24181f">
+  <meta name="description" content="Um teste especial das cinco linguagens do amor, feito com carinho para Luana Berkenbrock.">
+  <title>Para Luana Berkenbrock ♡ | As linguagens do amor</title>
+  <style>
+    :root {
+      --navy: #24181f;
+      --navy-2: #42232d;
+      --blue: #a02c48;
+      --blue-light: #fceaf0;
+      --cream: #fff9f8;
+      --paper: #fffcfb;
+      --pink: #fadadd;
+      --rose: #b64660;
+      --gold: #d4ac8a;
+      --ink: #31242b;
+      --muted: #766b73;
+      --line: #eae0e3;
+      --shadow: 0 24px 65px rgba(52, 28, 38, .12);
+      --radius: 25px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: .47; }
+    button:focus-visible, select:focus-visible, textarea:focus-visible, a:focus-visible, input:focus-visible { outline: 3px solid #d28aa5; outline-offset: 3px; }
+    [hidden] { display: none !important; }
+    .serif { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+    .wrapper { width: min(1100px, calc(100% - 42px)); margin-inline: auto; }
+    .top { position: relative; overflow: hidden; background: radial-gradient(ellipse at 83% 35%, #683146 0%, transparent 40%), radial-gradient(ellipse at 14% 85%, #3f2733 0%, transparent 38%), var(--navy); color: #fff; }
+    .top:before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .17; background-image: radial-gradient(#fff 1px, transparent 1px); background-size: 39px 39px; mask-image: linear-gradient(90deg,transparent 12%,black 90%); }
+    .nav { position: relative; z-index: 1; height: 92px; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+    .monogram { display: inline-grid; place-items: center; font-family: Georgia, serif; font-size: 20px; width: 52px; height: 52px; border: 1px solid rgba(255,255,255,.36); border-radius: 50%; color: #f5dcdc; }
+    .nav-name { display: flex; align-items: center; gap: 13px; color: #f9f4ee; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; }
+    .nav-sign { color: #eec8c3; font-size: 13px; font-family: Georgia, serif; font-style: italic; }
+    .hero { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 30px; padding: 55px 0 108px; min-height: 625px; }
+    .eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: 11px; font-weight: 700; color: #ffd2dc; }
+    h1 { font-size: clamp(56px, 7.8vw, 103px); line-height: 1.02; margin: 19px 0 26px; letter-spacing: -.045em; }
+    h1 em { color: #f6b5c7; font-weight: 400; }
+    .hero-lead { max-width: 520px; color: #f3e1e9; font-size: 17px; line-height: 1.8; margin-bottom: 30px; }
+    .hero-cta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 100px; padding: 15px 27px; font-weight: 750; font-size: 14px; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; text-decoration: none; }
+    .btn:not(:disabled):hover { transform: translateY(-2px); }
+    .btn-primary { color: #3b2131; background: #f6cfda; box-shadow: 0 12px 30px rgba(245, 216, 215, .14); }
+    .btn-primary:hover { background: #ffe3ea; }
+    .btn-blue { background: var(--blue); color: white; box-shadow: 0 10px 24px rgba(160,44,72,.18); }
+    .btn-blue:hover { background: #84233b; }
+    .btn-outline { border: 1px solid #d5d9e2; background: white; color: var(--ink); }
+    .btn-soft { color: #f4e5e5; background: rgba(255,255,255,.09); border: 1px solid rgba(255,255,255,.19); }
+    .hero-small { font-size: 12px; color: #e3c4d0; }
+    .orbit { position: relative; width: min(390px,100%); aspect-ratio: 1; margin: auto; border: 1px solid rgba(241,204,209,.25); border-radius: 50%; display: grid; place-items: center; }
+    .orbit:before, .orbit:after { content: ""; position: absolute; border: 1px solid rgba(241,204,209,.2); border-radius: 50%; }
+    .orbit:before { inset: 30px; } .orbit:after { inset: 62px; }
+    .orbit-heart { width: 195px; height: 195px; background: radial-gradient(circle at 50% 40%,#fcf3ed 0%,#f0cbcb 78%); border-radius: 50%; display: grid; place-items: center; z-index: 1; box-shadow: 0 0 70px rgba(255,186,196,.20); }
+    .orbit-heart svg { width: 97px; height: 97px; filter: drop-shadow(0 9px 10px rgba(169,55,88,.12)); }
+    .orbit .star { position: absolute; color: #efcd98; font-size: 24px; z-index: 2; }
+    .star-1 { top: 10%; left: 18%; } .star-2 { bottom: 12%; left: 18%; } .star-3 { right: 3%; top: 35%; } .star-4 { right: 26%; bottom: 4%; }
+    .orbit-label { position: absolute; z-index: 2; padding: 10px 15px; background: #fffaf5; border: 1px solid #f1dcd7; color: #704c65; box-shadow: 0 9px 25px rgba(0,0,0,.12); border-radius: 18px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .orbit-label.a { left: -11%; top: 21%; transform: rotate(-7deg); }
+    .orbit-label.b { right: -12%; bottom: 18%; transform: rotate(7deg); }
+    .section { padding: 73px 0; }
+    .intro-quote { text-align: center; padding: 55px 20px 45px; }
+    .intro-quote .eyebrow { color: var(--rose); }
+    .intro-quote p { margin: 14px auto 0; font-size: clamp(23px, 4vw, 38px); line-height: 1.35; max-width: 700px; }
+    .intro-quote .caption { margin-top: 14px; color: var(--muted); font-size: 13px; }
+    .languages { display: grid; grid-template-columns: repeat(5,1fr); gap: 11px; margin-top: 18px; }
+    .language-chip { border-radius: 17px; border: 1px solid #eee4e1; padding: 18px 10px; background: #fff; text-align: center; box-shadow: 0 6px 19px rgba(35,40,70,.03); font-size: 12px; font-weight: 700; }
+    .language-chip .emoji { display: block; font-size: 25px; margin-bottom: 9px; }
+    .quiz-shell { margin-top: 50px; padding: 42px; background: white; border: 1px solid #eee7e2; border-radius: var(--radius); box-shadow: var(--shadow); }
+    .quiz-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 23px; }
+    .section-id { font-size: 12px; letter-spacing: .17em; font-weight: 800; text-transform: uppercase; color: var(--blue); }
+    .quiz-counter { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .progress-track { width: 100%; height: 7px; border-radius: 8px; background: #f1f0ef; overflow: hidden; }
+    .progress-fill { height: 100%; width: 0; border-radius: inherit; background: linear-gradient(90deg, #ae3352, #dfacb7); transition: width .28s ease; }
+    .quiz-category { display: inline-block; border-radius: 99px; background: #fff0f3; color: #983854; padding: 6px 13px; font-size: 12px; font-weight: 700; margin-top: 36px; }
+    .question-title { font-size: clamp(25px, 4.5vw, 40px); line-height: 1.26; letter-spacing: -.025em; max-width: 750px; margin: 17px 0 10px; }
+    .question-description { color: var(--muted); margin: 0 0 25px; font-size: 14px; }
+    .option-list { display: grid; gap: 12px; }
+    .option { display: grid; grid-template-columns: 27px 1fr; align-items: center; gap: 13px; padding: 19px 20px; border: 1.5px solid #e3e6ed; border-radius: 17px; background: #fff; text-align: left; transition: background .18s, border-color .18s, transform .18s; width: 100%; color: var(--ink); }
+    .option:hover { border-color: #cb879a; background: #fff6f8; }
+    .option.is-selected { border-color: #a02c48; background: #fef0f4; box-shadow: inset 0 0 0 1px #a02c48; }
+    .option-mark { width: 27px; height: 27px; border: 1.5px solid #aab5c6; border-radius: 50%; display: grid; place-items: center; font-size: 14px; color: transparent; background: white; }
+    .option.is-selected .option-mark { background: var(--blue); color: white; border-color: var(--blue); }
+    .option-text { font-weight: 600; font-size: 15px; }
+    .quiz-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 28px; }
+    .quiz-hint { font-size: 12px; color: var(--muted); margin: 15px 0 0; }
+    .results { margin-top: 48px; }
+    .results-top { display: grid; grid-template-columns: 1.05fr .95fr; gap: 24px; }
+    .result-feature { border-radius: 23px; padding: 36px; background: linear-gradient(142deg,#4b2432,#24181f); color: white; overflow: hidden; position: relative; }
+    .result-feature:after { content: '♡'; position: absolute; font-family: Georgia,serif; font-size: 220px; right: -26px; bottom: -112px; color: rgba(250,215,220,.08); pointer-events: none; }
+    .result-feature .eyebrow { color: #f2c5c1; }
+    .result-feature h2 { font-size: clamp(35px,5vw,58px); letter-spacing: -.035em; line-height: 1.1; margin: 19px 0; position: relative; z-index: 1; }
+    .result-feature p { color: #f5dce6; font-size: 15px; position: relative; z-index: 1; }
+    .result-feature .result-icon { font-size: 36px; }
+    .score-box { background: white; border: 1px solid #eee6e2; border-radius: 23px; padding: 31px; box-shadow: 0 14px 30px rgba(23,39,73,.05); }
+    .score-box h3, .match-card h3 { margin: 0 0 19px; font-size: 20px; }
+    .score-item { margin: 16px 0; }
+    .score-label { display: flex; justify-content: space-between; gap: 15px; font-size: 12px; font-weight: 700; margin-bottom: 8px; }
+    .score-label strong { color: var(--muted); }
+    .score-track { height: 9px; background: #edf0f5; border-radius: 99px; overflow: hidden; }
+    .score-bar { height: 100%; background: linear-gradient(90deg,#b74a64,#d69db0); border-radius: inherit; transition: width .5s ease; }
+    .fine-print { color: var(--muted); font-size: 12px; line-height: 1.6; margin: 18px 0 0; }
+    .match-card { margin-top: 24px; border: 1px solid #efd5dc; border-radius: 24px; padding: 33px; background: linear-gradient(115deg, #ffe9ee 0%, #fff9f3 80%); }
+    .match-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .match-symbol { border: 1px solid #ebb7c4; color: #ac4964; border-radius: 100px; font-size: 12px; padding: 7px 15px; font-weight: 700; }
+    .match-desc { color: #755968; line-height: 1.75; margin-bottom: 0; }
+    .my-languages { margin-top: 22px; }
+    .my-languages-title { font-size: 13px; font-weight: 750; color: #65465b; margin: 0 0 11px; }
+    .my-language-tags { display: flex; gap: 9px; flex-wrap: wrap; }
+    .my-language-tag { padding: 9px 14px; font-size: 13px; font-weight: 700; color: #813550; background: white; border: 1px solid #efd1d7; border-radius: 100px; }
+    .match-comparison { font-size: 13px; font-weight: 650; color: #93435e; margin-top: 15px; }
+    .date-card { margin-top: 27px; border-radius: 25px; overflow: hidden; background: white; box-shadow: var(--shadow); border: 1px solid #eee6e0; }
+    .date-top { padding: 35px; background: #fcf1f3; border-bottom: 1px solid #efdee3; }
+    .date-top .section-id { color: #9c3655; }
+    .date-top h2 { font-size: clamp(27px, 4.8vw, 46px); line-height: 1.18; letter-spacing: -.035em; margin: 12px 0; }
+    .date-top p { color: #755a6a; margin-bottom: 0; }
+    .date-form { padding: 32px 35px 35px; }
+    textarea { width: 100%; min-height: 153px; resize: vertical; border: 1.5px solid #dce2eb; border-radius: 16px; background: #fffefa; color: var(--ink); padding: 19px; line-height: 1.6; font-size: 15px; }
+    textarea:focus { border-color: #a83d5d; outline: 3px solid rgba(168,61,93,.14); }
+    .textarea-count { text-align: right; color: var(--muted); font-size: 12px; margin-top: 5px; }
+    .consent { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; color: #46536b; font-size: 13px; }
+    .consent input { accent-color: var(--blue); margin-top: 4px; flex: 0 0 auto; width: 17px; height: 17px; }
+    .send-options { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 23px; }
+    .send-options .btn { font-size: 13px; padding: 14px 20px; }
+    .status { min-height: 24px; color: #91324e; font-weight: 650; font-size: 13px; margin-top: 16px; }
+    .reset-link { display: inline-block; margin-top: 24px; background: none; padding: 7px 0; border: 0; border-bottom: 1px solid currentColor; color: var(--muted); font-size: 13px; }
+    .footer { padding: 55px 20px 70px; text-align: center; color: #7d8090; font-size: 13px; }
+    .footer .heart { display: block; font-size: 22px; color: #bb5670; margin-bottom: 5px; }
+    .ambient { display: block; }
+    @media (max-width: 810px) {
+      .hero { grid-template-columns: 1fr; gap: 25px; padding: 35px 0 65px; }
+      .orbit { width: 265px; margin: 35px auto 10px; }
+      .orbit:before { inset: 23px; } .orbit:after { inset: 48px; }
+      .orbit-heart { width: 145px; height: 145px; } .orbit-heart svg { width: 74px; height: 74px; }
+      .orbit-label.a { left: -18%; } .orbit-label.b { right: -20%; }
+      .languages { grid-template-columns: repeat(3,1fr); }
+      .results-top { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 510px) {
+      .wrapper { width: min(100% - 30px,1100px); }
+      .nav { height: 72px; } .monogram { height: 45px; width: 45px; }
+      .nav-name { font-size: 11px; letter-spacing: .08em; } .nav-sign { display: none; }
+      h1 { font-size: clamp(54px, 13vw, 77px); }
+      .hero-lead { font-size: 15px; }
+      .hero-cta .btn { width: 100%; }
+      .hero-small { display: block; text-align: center; width: 100%; }
+      .orbit { margin: 22px auto 0; }
+      .languages { grid-template-columns: repeat(2,1fr); }
+      .intro-quote { padding: 50px 5px 28px; }
+      .section { padding: 34px 0; }
+      .quiz-shell { padding: 22px 18px; border-radius: 19px; margin-top: 24px; }
+      .question-title { font-size: 26px; }
+      .option { padding: 15px 12px; gap: 11px; }
+      .option-text { font-size: 14px; }
+      .quiz-footer .btn { padding: 13px 20px; }
+      .result-feature, .score-box, .match-card { padding: 23px; }
+      .my-language-tags { gap: 8px; }
+      .date-top { padding: 24px; } .date-form { padding: 23px; }
+      .send-options { display: grid; } .send-options .btn { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*:before,*:after { animation-duration: .01ms!important; transition-duration: .01ms!important; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrapper">
+      <nav class="nav" aria-label="Navegação principal">
+        <div class="nav-name"><span class="monogram" aria-hidden="true">LB</span><span>Um presente para Luana Berkenbrock</span></div>
+        <span class="nav-sign">feito com carinho ♡</span>
+      </nav>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">Especialmente para alguém especial ✦</div>
+          <h1 class="serif">Luana,<br><em>e as formas</em><br>de amar.</h1>
+          <p class="hero-lead">Entre um jogo do Furacão, o cheirinho de pinhão que lembra Curitiba e quatro gatos que parecem mandar na casa… existe um jeito só seu de sentir carinho. Vamos descobrir?</p>
+          <div class="hero-cta">
+            <button id="startButton" class="btn btn-primary" type="button">Começar nosso teste <span aria-hidden="true">♡</span></button>
+            <span class="hero-small">15 perguntas · cerca de 4 minutos</span>
+          </div>
+        </div>
+        <div class="orbit" aria-hidden="true">
+          <span class="star star-1">✧</span><span class="star star-2">✦</span><span class="star star-3">✧</span><span class="star star-4">✦</span>
+          <div class="orbit-heart"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M50 83C34 71 13 57 13 36C13 24 22 16 33 16C42 16 47 21 50 26C53 21 59 16 68 16C79 16 87 24 87 36C87 57 66 71 50 83Z" fill="#C75C7B"/><path d="M27 30C30 25 35 24 40 26" stroke="#FFDDE1" stroke-width="4" stroke-linecap="round"/></svg></div>
+          <div class="orbit-label a">🐾 quatro chefes felinos</div>
+          <div class="orbit-label b">❤️ coração rubro-negro</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrapper">
+      <div class="intro-quote">
+        <div class="eyebrow">Cinco linguagens, infinitos jeitos de sentir</div>
+        <p class="serif">“O mais bonito é descobrir o que faz o outro se sentir amado.”</p>
+        <p class="caption">Uma brincadeira inspirada no conceito das cinco linguagens do amor, sem caráter científico ou diagnóstico.</p>
+      </div>
+      <div class="languages" aria-label="As cinco linguagens do amor">
+        <div class="language-chip"><span class="emoji">💌</span>Palavras de afirmação</div>
+        <div class="language-chip"><span class="emoji">☕</span>Tempo de qualidade</div>
+        <div class="language-chip"><span class="emoji">🎁</span>Presentes</div>
+        <div class="language-chip"><span class="emoji">🤝</span>Gestos de serviço</div>
+        <div class="language-chip"><span class="emoji">🫶</span>Toque físico</div>
+      </div>
+
+      <section id="quizSection" class="section" aria-labelledby="quizSectionTitle">
+        <div class="quiz-shell">
+          <div class="quiz-header"><div class="section-id" id="quizSectionTitle">Um pedacinho do seu coração</div><span class="quiz-counter" id="quizCounter">01 / 15</span></div>
+          <div class="progress-track" role="progressbar" aria-label="Progresso do teste" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0" id="progressbar"><div class="progress-fill" id="progressFill"></div></div>
+          <span class="quiz-category" id="quizCategory">♡ Sentimentos</span>
+          <h2 class="question-title serif" id="questionTitle" tabindex="-1"></h2>
+          <p class="question-description">Escolha o que faria seu coração sorrir mais. Não existem respostas certas.</p>
+          <div class="option-list" id="optionList" role="group" aria-label="Alternativas da pergunta"></div>
+          <div class="quiz-footer">
+            <button class="btn btn-outline" id="backButton" type="button">← Voltar</button>
+            <button class="btn btn-blue" id="nextButton" type="button" disabled>Próxima pergunta →</button>
+          </div>
+          <p class="quiz-hint">Dica: escolha pelo que você gostaria de receber, não pelo que costuma oferecer.</p>
+        </div>
+      </section>
+
+      <section class="section results" id="resultsSection" aria-label="Seu resultado" hidden>
+        <div class="results-top">
+          <div class="result-feature">
+            <div class="eyebrow">A descoberta mais bonita ✦</div>
+            <div class="result-icon" id="resultIcon" aria-hidden="true">💗</div>
+            <h2 class="serif" id="resultHeading"></h2>
+            <p id="resultDescription"></p>
+            <p id="resultSecondary"></p>
+          </div>
+          <div class="score-box">
+            <h3>Seu mapa de carinho</h3>
+            <div id="scoreList"></div>
+            <p class="fine-print">As barras mostram quantas vezes você escolheu cada linguagem entre 15 perguntas. Cada linguagem apareceu em 6 alternativas; empates podem acontecer.</p>
+          </div>
+        </div>
+
+        <div class="match-card">
+          <div class="match-head"><div class="section-id">Você + eu = ♡</div><span class="match-symbol">Compatibilidade afetiva</span></div>
+          <h3 class="serif" id="matchTitle">E nós dois, combinamos?</h3>
+          <p class="match-desc" id="matchDescription"></p>
+          <div class="my-languages" aria-label="Minhas três linguagens do amor">
+            <p class="my-languages-title">Os três jeitos pelos quais eu mais sinto amor:</p>
+            <div class="my-language-tags">
+              <span class="my-language-tag">☕ Tempo de qualidade</span>
+              <span class="my-language-tag">🤝 Gestos de serviço</span>
+              <span class="my-language-tag">🫶 Toque físico</span>
+            </div>
+          </div>
+          <div class="match-comparison" id="matchComparison" aria-live="polite"></div>
+          <p class="fine-print">Compatibilidade aqui é uma mensagem personalizada, não uma porcentagem científica. Linguagens diferentes também podem formar uma dupla incrível.</p>
+        </div>
+
+        <div class="date-card" id="dateCard">
+          <div class="date-top">
+            <span class="section-id">Uma última pergunta, Luana… 💌</span>
+            <h2 class="serif">Escreva aqui: como seria o seu date ideal em Belo Horizonte?</h2>
+            <p>Vale um café sem pressa, um passeio por BH, uma noite com gostinho de Curitiba… ou um date que passe pela avaliação do quarteto felino. 🐾</p>
+          </div>
+          <div class="date-form">
+            <label for="dateAnswer"><strong>Seu encontro dos sonhos começa aqui</strong></label>
+            <textarea id="dateAnswer" maxlength="1000" minlength="8" required placeholder="Meu date ideal em BH seria..." aria-describedby="charCount"></textarea>
+            <div class="textarea-count" id="charCount">0 / 1000 caracteres</div>
+            <label class="consent"><input type="checkbox" id="shareConsent"><span>Eu concordo em compartilhar minhas respostas do teste e minha ideia de date com a pessoa que criou este site. Nada é enviado automaticamente.</span></label>
+            <div class="send-options">
+              <button type="button" class="btn btn-blue" id="sendWhatsApp">♡ Enviar por WhatsApp</button>
+              <button type="button" class="btn btn-outline" id="sendEmail">✉ Enviar por e-mail</button>
+              <button type="button" class="btn btn-outline" id="sendSheets" hidden>↗ Enviar para Google Sheets</button>
+              <button type="button" class="btn btn-outline" id="copyAnswers">⧉ Copiar respostas</button>
+            </div>
+            <div class="status" id="sendStatus" role="status" aria-live="polite"></div>
+            <p class="fine-print" id="sendingNote">O WhatsApp abre nossa conversa; o e-mail abre uma mensagem endereçada a mim. Em ambos, você confere e confirma o envio no aplicativo. ❤️</p>
+            <button class="reset-link" type="button" id="resetButton">Refazer o teste ↺</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer"><span class="heart">♡</span>Para Luana Berkenbrock, com carinho.<br>Que o Furacão renda boas histórias, Curitiba traga memórias quentinhas e Simba, Alfafa, Lola e Bartholomeu aprovem a dupla. ❤️</footer>
+
+  <script>
+    'use strict';
+
+    // ================================================================
+    // DADOS DO DESTINATÁRIO (fixados para o site da Luana Berkenbrock).
+    // WhatsApp: país 55 + DDD 31 + número, apenas dígitos.
+    // O envio por WhatsApp/e-mail requer que Luana confirme no aplicativo.
+    // Google Sheets é opcional: informe a URL /exec para habilitar.
+    // As três linguagens do criador são FIXAS, sem seletor no site.
+    // ================================================================
+    const CONFIG = {
+      whatsappNumero: '5531994816487',
+      meuEmail: 'contatolucasaugusto@hotmail.com',
+      googleSheetsUrl: '',
+      minhasLinguagens: ['tempo', 'servicos', 'toque']
+    };
+
+    const LINGUAGENS = {
+      palavras: { nome: 'Palavras de afirmação', emoji: '💌', texto: 'Você floresce quando o carinho vira palavra. Um elogio sincero, uma mensagem inesperada e o reconhecimento dos pequenos esforços fazem toda a diferença.' },
+      tempo: { nome: 'Tempo de qualidade', emoji: '☕', texto: 'Para você, a presença vale ouro. Conversas sem pressa, atenção de verdade e memórias construídas juntos falam mais alto que qualquer distração.' },
+      presentes: { nome: 'Presentes', emoji: '🎁', texto: 'O encanto está em ser lembrada: uma flor, uma cartinha ou algo simples que diga “vi isso e pensei em você”. Não é preço, é significado.' },
+      servicos: { nome: 'Gestos de serviço', emoji: '🤝', texto: 'O amor aparece em atitudes. Quando alguém cuida de um detalhe, facilita seu dia ou demonstra parceria de forma prática, você sente esse carinho.' },
+      toque: { nome: 'Toque físico', emoji: '🫶', texto: 'Um abraço demorado, mãos dadas ou um carinho respeitoso podem transmitir segurança e conexão sem precisar de muitas palavras.' }
+    };
+
+    // Cada linguagem aparece exatamente 6 vezes nas alternativas.
+    // Duas escolhas por cenário, com equilíbrio entre as cinco linguagens.
+    const PERGUNTAS = [
+      { tema: '🌪️ Dia de Furacão', pergunta: 'Antes de um jogo importante do Athletico-PR, qual carinho te conquistaria mais?', opcoes: [
+        { lang: 'palavras', texto: 'Ouvir: “Adoro o jeito como você se empolga com aquilo de que gosta.”', curta: 'Um elogio sobre minhas paixões' },
+        { lang: 'tempo', texto: 'Ter companhia para assistir ao jogo, torcer e comentar cada lance.', curta: 'Assistir ao Athletico juntos' }
+      ]},
+      { tema: '🐈 Simba & Alfafa', pergunta: 'Você manda uma foto linda do Simba e do Alfafa. O que teria mais a sua cara?', opcoes: [
+        { lang: 'palavras', texto: 'Receber uma mensagem dizendo como é bonito o carinho que tenho por eles.', curta: 'Reconhecer o amor pelos meus gatos' },
+        { lang: 'presentes', texto: 'Ser surpreendida com um mimo escolhido especialmente para os dois.', curta: 'Um mimo para Simba e Alfafa' }
+      ]},
+      { tema: '📚 Rotina na FGV', pergunta: 'Depois de um dia intenso de trabalho na FGV, o que mais demonstraria cuidado?', opcoes: [
+        { lang: 'palavras', texto: 'Escutar: “Eu vejo seu esforço, admiro sua dedicação e torço por você.”', curta: 'Reconhecimento pelo meu esforço' },
+        { lang: 'servicos', texto: 'Alguém resolver um detalhe da minha rotina para eu conseguir descansar.', curta: 'Ajuda prática após o trabalho' }
+      ]},
+      { tema: '🌰 Pinhão e lembranças', pergunta: 'Um dia frio em BH traz aquele cheirinho de pinhão e uma saudade boa de Curitiba. Que carinho te deixaria mais feliz?', opcoes: [
+        { lang: 'palavras', texto: 'Ouvir alguém dizer que adora conhecer suas histórias e lembranças de Curitiba.', curta: 'Carinho por minhas lembranças de Curitiba' },
+        { lang: 'toque', texto: 'Ganhar um abraço gostoso para acompanhar o frio e a nostalgia, se eu quiser.', curta: 'Um abraço aconchegante no frio' }
+      ]},
+      { tema: '📍 Nosso BH', pergunta: 'Já que Belo Horizonte é sua cidade, qual convite para um date parece mais especial?', opcoes: [
+        { lang: 'tempo', texto: 'Explorar um cantinho da cidade, conversar sem pressa e descobrir algo novo juntos.', curta: 'Passear e conversar em BH' },
+        { lang: 'presentes', texto: 'Encontrar uma flor ou uma lembrancinha pensada para mim logo no começo.', curta: 'Receber uma surpresa carinhosa' }
+      ]},
+      { tema: '☕ Depois do expediente', pergunta: 'Você teve um dia daqueles. O que deixaria a noite mais leve?', opcoes: [
+        { lang: 'tempo', texto: 'Ter uma conversa de verdade, com celular longe e atenção só para nós.', curta: 'Conversa com atenção de verdade' },
+        { lang: 'servicos', texto: 'Alguém cuidar de uma tarefa ou organizar algo para eu relaxar.', curta: 'Ter a rotina facilitada' }
+      ]},
+      { tema: '🍷 Quentão e conversa', pergunta: 'Imagine uma noite fria, quentão (com ou sem álcool) e histórias de Curitiba. O que deixaria tudo mais especial?', opcoes: [
+        { lang: 'tempo', texto: 'Ter alguém presente para ouvir minhas histórias e dividir a noite sem olhar o relógio.', curta: 'Compartilhar histórias e tempo juntos' },
+        { lang: 'toque', texto: 'Ficar juntinho, de mãos dadas ou abraçados, se os dois estiverem à vontade.', curta: 'Carinho e aconchego na noite fria' }
+      ]},
+      { tema: '🐾 Lola & Bartholomeu', pergunta: 'A Lola e o Bartholomeu resolvem aprontar no mesmo dia. Qual gesto faria você sorrir?', opcoes: [
+        { lang: 'presentes', texto: 'Uma surpresa com brinquedinhos ou petiscos escolhidos para eles.', curta: 'Um presente para Lola e Bartholomeu' },
+        { lang: 'servicos', texto: 'Alguém ajudar com os cuidados e a bagunça, sem nem precisar pedir.', curta: 'Ajuda espontânea com os gatos' }
+      ]},
+      { tema: '🖤❤️ Memória rubro-negra', pergunta: 'Depois de um dia inesquecível torcendo pelo Athletico, o que você guardaria com mais carinho?', opcoes: [
+        { lang: 'presentes', texto: 'Uma foto impressa, um ingresso guardado ou outra lembrança daquele momento.', curta: 'Uma lembrança do dia de jogo' },
+        { lang: 'toque', texto: 'Um abraço demorado para celebrar a memória que criamos juntos.', curta: 'Um abraço para celebrar juntos' }
+      ]},
+      { tema: '🕊️ Cuidado e acolhimento', pergunta: 'Se você quiser falar daquela história séria de quando foi perseguida pelo PCC, que cuidado faria mais diferença? (Sem precisar contar detalhes.)', opcoes: [
+        { lang: 'servicos', texto: 'Alguém perceber do que eu preciso e oferecer ajuda prática, respeitando meu espaço.', curta: 'Ajuda prática com respeito e cuidado' },
+        { lang: 'toque', texto: 'Um abraço acolhedor, somente se eu quiser e no meu tempo.', curta: 'Um abraço acolhedor, com respeito' }
+      ]},
+      { tema: '🗳️ Papo com personalidade', pergunta: 'Quando a conversa chega à política — sim, até o PT entra na pauta 😄 — o que te conquista?', opcoes: [
+        { lang: 'palavras', texto: 'Ouvir algo sincero como: “Gosto de como você defende suas ideias com personalidade.”', curta: 'Ser admirada pelas minhas ideias' },
+        { lang: 'tempo', texto: 'Ter uma conversa leve, com escuta verdadeira, respeito e espaço para rir.', curta: 'Diálogo com atenção e respeito' }
+      ]},
+      { tema: '🍂 Um pedacinho de Curitiba', pergunta: 'Se alguém quisesse trazer um pedacinho de Curitiba para o seu dia em BH, o que te encantaria mais?', opcoes: [
+        { lang: 'tempo', texto: 'Preparar pinhão juntos e passar horas conversando sobre suas memórias favoritas.', curta: 'Pinhão, histórias e tempo juntos' },
+        { lang: 'presentes', texto: 'Receber uma pequena surpresa com algo típico que me lembre a cidade.', curta: 'Uma lembrança de Curitiba' }
+      ]},
+      { tema: '🐈‍⬛ O quarteto felino', pergunta: 'Simba, Alfafa, Lola e Bartholomeu são parte importante da sua vida. O que demonstra mais carinho?', opcoes: [
+        { lang: 'presentes', texto: 'Alguém aparecer com algo simples e pensado especialmente para os quatro.', curta: 'Uma lembrança para os quatro gatos' },
+        { lang: 'servicos', texto: 'Alguém ajudar a cuidar deles com atenção, respeitando seus jeitinhos.', curta: 'Ajudar com os cuidados dos gatos' }
+      ]},
+      { tema: '🌪️ Na vitória ou derrota', pergunta: 'Se o Athletico perder um jogo daqueles, qual cuidado melhora seu humor?', opcoes: [
+        { lang: 'servicos', texto: 'Alguém preparar meu lanche preferido e deixar o pós-jogo mais confortável.', curta: 'Cuidado prático depois do jogo' },
+        { lang: 'toque', texto: 'Um abraço acompanhado de um “na próxima a gente recupera!”.', curta: 'Abraço no sofrimento de torcedora' }
+      ]},
+      { tema: '💕 O que fica', pergunta: 'No final de um dia feliz, qual gesto faz você se sentir verdadeiramente querida?', opcoes: [
+        { lang: 'toque', texto: 'Ficar abraçadinha, curtindo a companhia e o silêncio confortável.', curta: 'Um abraço tranquilo no fim do dia' },
+        { lang: 'palavras', texto: 'Escutar: “Adorei estar com você. Você tornou meu dia mais bonito.”', curta: 'Palavras sinceras de carinho' }
+      ]}
+    ];
+
+    // Equilibra a posição das opções: cada linguagem ocupa a primeira posição 3 vezes.
+    [3, 5, 6, 10].forEach(indice => PERGUNTAS[indice].opcoes.reverse());
+
+    const $ = id => document.getElementById(id);
+    const respostas = Array(PERGUNTAS.length).fill(null);
+    let atual = 0;
+    let resultado = null;
+
+    function irAte(elemento) {
+      elemento.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    }
+
+    function renderizarPergunta(focar = false) {
+      const p = PERGUNTAS[atual];
+      $('quizCounter').textContent = String(atual + 1).padStart(2,'0') + ' / ' + PERGUNTAS.length;
+      $('progressFill').style.width = Math.round((atual / PERGUNTAS.length) * 100) + '%';
+      $('progressbar').setAttribute('aria-valuenow', String(atual));
+      $('quizCategory').textContent = p.tema;
+      $('questionTitle').textContent = p.pergunta;
+      $('optionList').replaceChildren();
+      p.opcoes.forEach((o,indice) => {
+        const botao = document.createElement('button');
+        botao.type = 'button';
+        botao.className = 'option' + (respostas[atual] === indice ? ' is-selected' : '');
+        botao.setAttribute('aria-pressed', String(respostas[atual] === indice));
+        const marca = document.createElement('span');
+        marca.className = 'option-mark'; marca.textContent = '✓'; marca.setAttribute('aria-hidden','true');
+        const texto = document.createElement('span');
+        texto.className = 'option-text'; texto.textContent = o.texto;
+        botao.append(marca, texto);
+        botao.addEventListener('click',() => { respostas[atual] = indice; renderizarPergunta(false); });
+        $('optionList').appendChild(botao);
+      });
+      $('nextButton').disabled = respostas[atual] === null;
+      $('nextButton').textContent = atual === PERGUNTAS.length - 1 ? 'Ver meu resultado ♡' : 'Próxima pergunta →';
+      $('backButton').disabled = atual === 0;
+      if (focar) $('questionTitle').focus({ preventScroll: true });
+    }
+
+    const NOMES = Object.keys(LINGUAGENS);
+    function calcularResultado() {
+      if (respostas.some(r => r === null)) return null;
+      const pontos = Object.fromEntries(NOMES.map(id => [id,0]));
+      PERGUNTAS.forEach((p,i) => { pontos[p.opcoes[respostas[i]].lang]++; });
+      const ranking = [...NOMES].sort((a,b) => pontos[b] - pontos[a]);
+      const max = pontos[ranking[0]];
+      return { pontos, ranking, principais: ranking.filter(id => pontos[id] === max) };
+    }
+
+    function fraseDasLinguagens(ids) {
+      const nomes = ids.map(id => LINGUAGENS[id].nome);
+      if (nomes.length <= 1) return nomes.join('');
+      return nomes.slice(0, -1).join(', ') + ' e ' + nomes[nomes.length - 1];
+    }
+
+    function atualizarCompatibilidade() {
+      if (!resultado) return;
+      const minhas = CONFIG.minhasLinguagens;
+      const dela = resultado.principais;
+      const emComum = dela.filter(id => minhas.includes(id));
+      const nomeDela = fraseDasLinguagens(dela).toLowerCase();
+      $('matchComparison').textContent =
+        'Luana: ' + fraseDasLinguagens(dela) + ' · Eu: ' + fraseDasLinguagens(minhas);
+
+      if (emComum.length > 0) {
+        $('matchTitle').textContent = emComum.length > 1
+          ? 'A gente combina em vários jeitos de amar! ❤️'
+          : 'Temos uma sintonia especial ❤️';
+        const coincidencia = fraseDasLinguagens(emComum).toLowerCase();
+        $('matchDescription').textContent =
+          'Olha só, Luana! ' + (emComum.length > 1 ? 'Nossas linguagens se encontram em ' : 'Nós dois valorizamos ') +
+          coincidencia + '. Eu também gosto de demonstrar carinho com tempo de qualidade, gestos de serviço e toque físico. ' +
+          'Imagina a gente aproveitando BH sem pressa, dividindo bons momentos e terminando o dia com um abraço? ' +
+          'Com respeito, conversa boa e carinho, quem sabe até o quarteto felino aprove esse duo?';
+      } else {
+        const gestos = {
+          palavras: 'te lembrar em palavras sinceras do quanto você é especial',
+          tempo: 'reservar um tempo só nosso, sem distrações',
+          presentes: 'preparar uma pequena surpresa cheia de significado',
+          servicos: 'cuidar dos detalhes que deixam seu dia mais leve',
+          toque: 'te receber com um abraço, sempre com carinho e respeito'
+        };
+        const linguagemDela = dela[0];
+        $('matchTitle').textContent = 'Dois jeitos lindos de demonstrar amor ♡';
+        $('matchDescription').textContent =
+          'Você sente carinho especialmente por ' + nomeDela + ', e eu me conecto mais com tempo de qualidade, gestos de serviço e toque físico. ' +
+          'É uma oportunidade gostosa de descobrir o jeito um do outro: eu posso ' + gestos[linguagemDela] +
+          ', e a gente pode construir momentos juntos, com atenção e afeto. ' +
+          'Não precisamos ter respostas iguais para fazer um encontro em BH ser inesquecível.';
+      }
+    }
+
+    function mostrarResultado() {
+      resultado = calcularResultado();
+      if (!resultado) return;
+      $('quizSection').hidden = true;
+      $('resultsSection').hidden = false;
+      const principal = resultado.principais[0];
+      $('resultIcon').textContent = LINGUAGENS[principal].emoji;
+      $('resultHeading').textContent = resultado.principais.length > 1
+        ? 'Seu coração fala ' + resultado.principais.length + ' linguagens!'
+        : 'Seu amor fala em ' + LINGUAGENS[principal].nome.toLowerCase() + '.';
+      $('resultDescription').textContent = resultado.principais.length > 1
+        ? 'Luana, seu resultado deu empate entre ' + fraseDasLinguagens(resultado.principais) + '. Isso só deixa mais bonito o jeito como você gosta de receber carinho.'
+        : LINGUAGENS[principal].texto;
+      const segundas = resultado.ranking.filter(id => !resultado.principais.includes(id));
+      $('resultSecondary').textContent = segundas.length
+        ? 'Outra linguagem que aparece no seu mapa: ' + LINGUAGENS[segundas[0]].nome + ' (' + resultado.pontos[segundas[0]] + ' escolhas).'
+        : 'Todas as linguagens apareceram em seu resultado.';
+      $('scoreList').replaceChildren();
+      resultado.ranking.forEach(id => {
+        const item = document.createElement('div'); item.className = 'score-item';
+        const linha = document.createElement('div'); linha.className = 'score-label';
+        const label = document.createElement('span'); label.textContent = LINGUAGENS[id].emoji + ' ' + LINGUAGENS[id].nome;
+        const valor = document.createElement('strong'); valor.textContent = resultado.pontos[id] + ' de 15';
+        linha.append(label, valor);
+        const trilha = document.createElement('div'); trilha.className = 'score-track';
+        const barra = document.createElement('div'); barra.className = 'score-bar';
+        barra.style.width = (resultado.pontos[id] / PERGUNTAS.length * 100) + '%';
+        trilha.appendChild(barra); item.append(linha, trilha); $('scoreList').appendChild(item);
+      });
+      $('sendSheets').hidden = !/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(CONFIG.googleSheetsUrl.trim());
+      atualizarCompatibilidade();
+      irAte($('resultsSection'));
+    }
+
+    function criarDados() {
+      const pontuacoes = NOMES.map(id => LINGUAGENS[id].nome + ': ' + resultado.pontos[id]).join(' | ');
+      const escolhas = PERGUNTAS.map((p,indice) =>
+        String(indice+1).padStart(2,'0') + '. [' + p.tema.replace(/^[^ ]+ /, '') + '] ' + p.opcoes[respostas[indice]].curta
+      ).join('\n');
+      return {
+        nome: 'Luana Berkenbrock',
+        principal: fraseDasLinguagens(resultado.principais),
+        secundaria: (() => { const outra = resultado.ranking.find(id => !resultado.principais.includes(id)); return outra ? LINGUAGENS[outra].nome : 'Empate entre as cinco linguagens'; })(),
+        pontuacoes,
+        linguagem_criador: fraseDasLinguagens(CONFIG.minhasLinguagens),
+        compatibilidade: $('matchTitle').textContent + ' — ' + $('matchDescription').textContent,
+        date_ideal: $('dateAnswer').value.trim(),
+        respostas: escolhas
+      };
+    }
+
+    function mensagemCompleta(d) {
+      return [
+        '❤️ TESTE DAS LINGUAGENS DO AMOR — LUANA BERKENBROCK ❤️',
+        '',
+        '💌 Minha(s) linguagem(ns): ' + d.principal,
+        '✨ Outra linguagem em destaque: ' + d.secundaria,
+        '📊 Pontuações: ' + d.pontuacoes,
+        '🫶 Sua linguagem: ' + d.linguagem_criador,
+        '💕 Compatibilidade: ' + d.compatibilidade,
+        '',
+        '📍 MEU DATE IDEAL EM BH:',
+        d.date_ideal,
+        '',
+        '📝 MINHAS ESCOLHAS NO TESTE:',
+        d.respostas,
+        '',
+        'Feito com carinho ♡'
+      ].join('\n');
+    }
+
+    function status(texto, erro = false) {
+      $('sendStatus').textContent = texto;
+      $('sendStatus').style.color = erro ? '#a33a52' : '#91324e';
+    }
+
+    function validarEnvio() {
+      if (!resultado) { status('Conclua o teste antes de enviar.', true); return false; }
+      if ($('dateAnswer').value.trim().length < 8) {
+        status('Conte um pouquinho mais sobre seu date ideal (ao menos 8 caracteres). 💌', true);
+        $('dateAnswer').focus(); return false;
+      }
+      if (!$('shareConsent').checked) {
+        status('Marque a autorização de compartilhamento para continuar.', true);
+        $('shareConsent').focus(); return false;
+      }
+      return true;
+    }
+
+    $('startButton').addEventListener('click', () => irAte($('quizSection')));
+    $('backButton').addEventListener('click', () => { if (atual > 0) { atual--; renderizarPergunta(true); } });
+    $('nextButton').addEventListener('click', () => {
+      if (respostas[atual] === null) return;
+      if (atual === PERGUNTAS.length - 1) mostrarResultado();
+      else { atual++; renderizarPergunta(true); }
+    });
+    $('dateAnswer').addEventListener('input', () => { $('charCount').textContent = $('dateAnswer').value.length + ' / 1000 caracteres'; status(''); });
+
+    $('sendWhatsApp').addEventListener('click', () => {
+      if (!validarEnvio()) return;
+      const numero = CONFIG.whatsappNumero.replace(/\D/g,'');
+      const link = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(mensagemCompleta(criarDados()));
+      const atalho = document.createElement('a');
+      atalho.href = link; atalho.target = '_blank'; atalho.rel = 'noopener noreferrer';
+      document.body.appendChild(atalho); atalho.click(); atalho.remove();
+      status('A conversa no WhatsApp foi aberta para o destinatário configurado. Confira a mensagem e toque em Enviar para concluir.');
+    });
+
+    $('sendEmail').addEventListener('click', () => {
+      if (!validarEnvio()) return;
+      const email = CONFIG.meuEmail.trim();
+      const mailto = 'mailto:' + email + '?subject=' + encodeURIComponent('Teste das linguagens do amor ♡ — Luana Berkenbrock') + '&body=' + encodeURIComponent(mensagemCompleta(criarDados()));
+      window.location.href = mailto;
+      status('O aplicativo de e-mail foi solicitado com o destinatário preenchido. Revise a mensagem e confirme o envio.');
+    });
+
+    $('sendSheets').addEventListener('click', () => {
+      if (!validarEnvio()) return;
+      const url = CONFIG.googleSheetsUrl.trim();
+      if (!/^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/.test(url)) { status('Configure a URL /exec do Google Apps Script primeiro.',true); return; }
+      // Formulário HTML nativo: faz POST sem problemas de CORS do fetch.
+      // A nova aba exibe o resultado REAL devolvido pelo Apps Script.
+      const formulario = document.createElement('form');
+      formulario.method = 'POST'; formulario.action = url; formulario.target = '_blank';
+      formulario.style.display = 'none';
+      const dados = criarDados();
+      for (const [nome,valor] of Object.entries(dados)) {
+        const campo = document.createElement('input'); campo.type = 'hidden'; campo.name = nome; campo.value = valor;
+        formulario.appendChild(campo);
+      }
+      document.body.appendChild(formulario); formulario.submit(); formulario.remove();
+      status('Envio solicitado. Confira a confirmação na nova aba e verifique a nova linha no Google Sheets.');
+    });
+
+    $('copyAnswers').addEventListener('click', async () => {
+      if (!resultado) return;
+      const conteudo = mensagemCompleta(criarDados());
+      try { await navigator.clipboard.writeText(conteudo); status('Resultado e resposta copiados! ♡'); }
+      catch(e) { status('Não foi possível copiar automaticamente. Use WhatsApp ou e-mail.', true); }
+    });
+
+    $('resetButton').addEventListener('click', () => {
+      respostas.fill(null); atual = 0; resultado = null;
+      $('resultsSection').hidden = true; $('quizSection').hidden = false;
+      $('dateAnswer').value = ''; $('shareConsent').checked = false;
+      $('charCount').textContent = '0 / 1000 caracteres'; status('');
+      renderizarPergunta(); irAte($('quizSection'));
+    });
+
+    renderizarPergunta();
+  </script>
+</body>
+</html>
